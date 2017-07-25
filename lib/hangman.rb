@@ -11,26 +11,26 @@ def start
 end
 
 def word_select
-	words = File.readlines("5desk.txt")
-	while true
+  words = File.readlines("5desk.txt")
+  while true
 		word = words[rand(words.length)].strip
 		return word if word.length>4 && word.length<13
-	end
+  end
 end
 
 def create_hidden_word word
-	hidden_word=[]
-	word.length.times {hidden_word << "*"}
-	hidden_word
+  hidden_word=[]
+  word.length.times {hidden_word << "*"}
+  hidden_word
 end
 
 def get_input
-	while true
+  while true
 		print "Input: "
 		input = gets.chomp
 		return input if input[/[a-zA-Z]+/] == input
 		puts "Invalid Entry, Re-try"
-	end
+  end
 end
 
 
@@ -40,8 +40,8 @@ def play
 	hidden_word = create_hidden_word word
 	guesses_left = 6
 	while true
+		played_letters||=[]		
 		puts "-----------------------"
-		played_letters||=[]
 		puts "Hidden Word: " + hidden_word.join("")
 		puts "#{guesses_left} guesses remaining"
 		input = get_input.downcase
