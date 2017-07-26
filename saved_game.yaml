@@ -1,0 +1,19 @@
+--- !ruby/object:Hangman
+word: minibike
+hidden_word:
+- "*"
+- i
+- "*"
+- i
+- "*"
+- i
+- "*"
+- e
+guesses_left: 3
+played_letters:
+- a
+- e
+- i
+- o
+- u
+input: save
